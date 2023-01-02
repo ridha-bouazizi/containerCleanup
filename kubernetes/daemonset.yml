@@ -22,7 +22,7 @@ spec:
           hostPath:
             path: /var/lib/docker
       containers:
-        - image: r08041994b/containerCleanup:latest
+        - image: r08041994b/containercleanup:latest
           name: clean-up
           env:
             - name: CLEAN_PERIOD
