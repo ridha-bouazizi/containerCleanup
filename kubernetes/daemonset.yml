@@ -2,17 +2,17 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   labels:
-    name: clean-up
-  name: clean-up
+    name: cleanup
+  name: cleanup
   annotations:
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/name: clean-up
+      name: cleanup
   template:
     metadata:
       labels:
-        app: clean-up
+        name: cleanup
     spec:
       volumes:
         - name: docker-sock
@@ -23,7 +23,7 @@ spec:
             path: /var/lib/docker
       containers:
         - image: r08041994b/containercleanup:latest
-          name: clean-up
+          name: cleanup
           env:
             - name: CLEAN_PERIOD
               value: "60"
